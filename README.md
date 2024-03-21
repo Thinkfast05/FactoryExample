@@ -28,23 +28,24 @@ To demonstrate the Factory Design Pattern, follow these steps:
 ## Example
 
 ```java
+package com.example.testing;
+
+import com.example.factory.EnemyFactory;
+import com.example.models.Enemy;
+
 import java.util.Scanner;
 
-public class Main {
+public class FactoryCreationTesting {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Enter the type of enemy you want to create (Goblin/Orc/Dragon):");
-        String enemyType = scanner.nextLine().trim();
-
         EnemyFactory enemyFactory = new EnemyFactory();
-        Enemy enemy = enemyFactory.createEnemy(enemyType);
-
-        if (enemy != null) {
-            enemy.attack();
-            enemy.move();
-        } else {
-            System.out.println("Invalid enemy type!");
+        Enemy theEnemy=null;
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("What type of enemy would you like to choose? (Zombie/ Knight/ Mage)");
+        if(userInput.hasNextLine()){
+            String typeOfEnemy = userInput.nextLine();
+            theEnemy = enemyFactory.makeEnemy(typeOfEnemy);
+            if(theEnemy!=null)
+                theEnemy.attack();
         }
     }
 }
