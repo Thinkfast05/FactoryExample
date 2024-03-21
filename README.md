@@ -10,7 +10,7 @@ The Factory Design Pattern is a creational pattern that provides an interface fo
 
 1. **Enemy Class**: Represents the base class for all enemies. It defines common attributes and methods shared by all enemy types.
 
-2. **Special Enemy Subclasses**: These are subclasses of `Enemy` representing different types of enemies with specialized behaviors. For example, `Goblin`, `Orc`, and `Dragon` could be special enemy types.
+2. **Special Enemy Subclasses**: These are subclasses of `Enemy` representing different types of enemies with specialized behaviors. For example, `Zombie`, `Knight`, and `Mage` could be special enemy types.
 
 3. **EnemyFactory**: This class is responsible for creating instances of enemies based on user input. It encapsulates the object creation logic and shields the client from the complexities of instantiation.
 
